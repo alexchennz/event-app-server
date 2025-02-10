@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -10,8 +11,12 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
+const uri = `mongodb+srv://${process.env.DB_USER}:` +
+            `${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER_URL}/` +
+            `?retryWrites=true&w=majority&appName=${process.env.DB_APP_NAME}`;
+
 // Connect to MongoDB - removed deprecated options
-mongoose.connect("mongodb+srv://newzealandbuy:bI4Nsm9kQGuNVHEo@eventappdb.vxkgr.mongodb.net/?retryWrites=true&w=majority&appName=eventappdb")
+mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
