@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Event = require('./models/Event');
+const Event = require('../models/Event');
 
 // Connect to MongoDB - removed deprecated options
 mongoose.connect("mongodb+srv://newzealandbuy:bI4Nsm9kQGuNVHEo@eventappdb.vxkgr.mongodb.net/?retryWrites=true&w=majority&appName=eventappdb")
