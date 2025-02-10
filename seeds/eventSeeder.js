@@ -11,7 +11,7 @@ const events = [
     },
     category: "Music",
     price: {
-      from: 89,
+      from: 9999,
       to: 150
     },
     image: "/images/summer-fest.jpg",

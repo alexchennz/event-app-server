@@ -23,6 +23,7 @@ app.use('/images', express.static(path.join(__dirname, 'seeds/images')));
 
 // Update the GET endpoint to handle search and sort by upcoming dates
 app.get('/api/events', async (req, res) => {
+  
   try {
     const { limit, featured, search, ids, location, date, category } = req.query;
     
