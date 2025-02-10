@@ -5,13 +5,14 @@ const path = require('path');
 const Event = require('./models/Event');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
+const PORT = 8080;
 
 app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB - removed deprecated options
-mongoose.connect('mongodb://localhost/nz-events')
+mongoose.connect("mongodb+srv://newzealandbuy:bI4Nsm9kQGuNVHEo@eventappdb.vxkgr.mongodb.net/?retryWrites=true&w=majority&appName=eventappdb")
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
